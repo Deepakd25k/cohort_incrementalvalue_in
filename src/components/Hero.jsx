@@ -4,15 +4,9 @@ import Dialog from './Dialog';
 export default function Hero({ config }) {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
-  // Fallback defaults to ensure nothing breaks if missing
   const {
     price = '₹2,999',
-    duration = '4 weekends',
-    schedule = 'Saturday + Sunday',
-    liveHours = '24 live hours', // Documenting assumption: 8 sessions x 3 hrs (2.5 teach + 0.5 disc)
     checkoutUrl = null,
-    startDate = null,
-    endDate = null,
     onViewCurriculum = () => console.log('Curriculum clicked')
   } = config || {};
 
@@ -26,79 +20,88 @@ export default function Hero({ config }) {
 
   return (
     <main className="w-full flex-grow flex items-center bg-background">
-      <div className="max-w-[1200px] mx-auto w-full px-5 md:px-6 pt-8 pb-10 md:py-16 lg:py-20 flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+      <div className="max-w-[1200px] mx-auto w-full px-5 md:px-6 pt-10 pb-12 md:py-16 lg:py-20 flex flex-col lg:flex-row gap-12 lg:gap-16">
         
         {/* Left Column - Copy */}
-        <div className="w-full lg:w-[56%] flex flex-col">
-          <div className="text-[12px] font-semibold text-secondary tracking-widest uppercase mb-4">
+        <div className="w-full lg:w-[56%] flex flex-col pt-2 md:pt-4">
+          
+          {/* Eyebrow */}
+          <div className="flex items-center gap-2 text-[10px] sm:text-[11px] font-semibold text-secondary tracking-widest uppercase mb-5">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#3155F5]"></span>
             D2C PERFORMANCE MARKETING · COHORT 03
           </div>
           
-          <h1 className="text-[38px] sm:text-[44px] lg:text-[56px] xl:text-[64px] font-semibold text-main leading-[1.06] tracking-tight mb-6">
+          {/* Headline */}
+          <h1 className="text-[46px] sm:text-[56px] lg:text-[64px] font-bold text-main leading-[1.05] tracking-tight mb-6">
             Run the ads.<br/>
             Understand the<br/>
-            <span className="text-accent">whole business.</span>
+            <span className="text-[#3155F5]">whole business.</span>
           </h1>
 
-          <p className="text-[16px] lg:text-[18px] text-secondary leading-[1.6] max-w-[550px] mb-3">
-            A live, practical cohort to connect ads, tracking, creatives, conversion and delivered revenue—so you can understand what’s holding a D2C brand back and decide what to fix next.
+          {/* Subheading 1 */}
+          <p className="text-[18px] md:text-[20px] text-secondary leading-[1.5] max-w-[540px] mb-4">
+            Learn to diagnose D2C growth—from acquisition and tracking to CRO, delivered orders and repeat purchases.
           </p>
           
-          <p className="text-[14px] text-secondary mb-8">
-            For marketers and freelancers who know the basics and want to work beyond Ads Manager.
+          {/* Subheading 2 */}
+          <p className="text-[15px] text-secondary max-w-[500px] mb-8">
+            For marketers who know campaign basics and want to own the next decision.
           </p>
 
-          {/* Course Facts */}
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-[14px] font-medium text-main mb-8">
-            <span>{duration}</span>
-            <span className="hidden md:inline-block w-px h-4 bg-border"></span>
-            <span>{schedule}</span>
-            <span className="hidden md:inline-block w-px h-4 bg-border"></span>
-            <span>{liveHours}</span>
-          </div>
-
-          {/* Actions */}
-          <div className="w-full sm:w-auto flex flex-col sm:flex-row items-center gap-4 mb-4">
+          {/* CTA Group */}
+          <div className="flex flex-col items-start gap-5 mb-10 w-full sm:w-auto">
             <button 
               onClick={handlePrimaryAction}
-              className="w-full sm:w-auto h-[52px] md:h-[56px] px-6 bg-accent hover:bg-accent/90 text-white font-semibold rounded-lg flex items-center justify-center gap-2 transition-colors focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2"
+              className="w-full sm:w-auto h-[54px] md:h-[56px] px-8 bg-[#3155F5] hover:bg-[#3155F5]/90 text-white text-[16px] font-medium rounded-[6px] flex items-center justify-center sm:justify-start gap-2.5 transition-colors focus:outline-none"
             >
-              Join Cohort 03 — {price}
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M3.33331 8H12.6666" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M8 3.33331L12.6667 7.99998L8 12.6666" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              Join Batch 03 — {price}
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7 17L17 7" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M7 7H17V17" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </button>
+            
             <button 
               onClick={onViewCurriculum}
-              className="w-full sm:w-auto h-[52px] md:h-[56px] px-6 text-main font-semibold hover:bg-surface rounded-lg transition-colors flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-border"
+              className="text-[15px] font-medium text-main border-b border-border hover:border-main pb-1 transition-colors flex items-center gap-1.5"
             >
-              Explore the curriculum ↓
+              See what you'll learn 
+              <span className="text-[12px]">↓</span>
             </button>
           </div>
-          <div className="text-[13px] text-secondary mb-10">
-            Live teaching. Practical walkthroughs. Discussion every session.
+
+          {/* Stats Row */}
+          <div className="flex flex-wrap items-center gap-6 md:gap-8 mb-4">
+            <div className="flex items-baseline gap-1.5">
+              <span className="text-[34px] font-bold text-main leading-none tracking-tight">4</span>
+              <span className="text-[13px] text-secondary font-medium">weekends</span>
+            </div>
+            <div className="w-px h-10 bg-border hidden sm:block"></div>
+            <div className="flex items-baseline gap-1.5">
+              <span className="text-[34px] font-bold text-main leading-none tracking-tight">8</span>
+              <span className="text-[13px] text-secondary font-medium">live sessions</span>
+            </div>
+            <div className="w-px h-10 bg-border hidden sm:block"></div>
+            <div className="flex items-baseline gap-1.5">
+              <span className="text-[34px] font-bold text-main leading-none tracking-tight">24</span>
+              <span className="text-[13px] text-secondary font-medium">live hours</span>
+            </div>
           </div>
 
-          {/* Instructor & Dates */}
-          <div className="flex flex-col gap-1">
-            <div className="text-[14px] font-semibold text-main">Led by Deepak Kumar</div>
-            <div className="text-[14px] text-secondary">Founder, IncrementalValue</div>
-            {startDate && endDate && (
-              <div className="mt-4 text-[13px] font-medium text-main bg-surface px-3 py-1.5 rounded-md inline-block border border-border self-start">
-                Starts {startDate} · Enrolment closes {endDate}
-              </div>
-            )}
+          {/* Small Footer Text */}
+          <div className="text-[12px] text-secondary leading-relaxed max-w-[400px]">
+            Saturday + Sunday · 2.5h workshop + 30m discussion<br/>
+            Start date & exact IST timings to be announced.
           </div>
         </div>
 
         {/* Right Column - Learning Map */}
-        <div className="w-full lg:w-[44%]">
-          <div className="bg-surface border border-border rounded-[16px] p-5 md:p-[28px]">
+        <div className="w-full lg:w-[44%] mt-6 lg:mt-0 lg:pt-4">
+          <div className="bg-surface border border-border rounded-[16px] p-6 md:p-[32px]">
             <div className="text-[11px] font-bold text-secondary tracking-widest uppercase mb-3">
               WHAT YOU’LL CONNECT
             </div>
-            <h2 className="text-[28px] md:text-[32px] font-semibold text-main leading-tight tracking-tight mb-6">
+            <h2 className="text-[28px] md:text-[32px] font-bold text-main leading-tight tracking-tight mb-6">
               From first click<br/>
               to delivered order.
             </h2>
@@ -112,7 +115,7 @@ export default function Hero({ config }) {
                 { num: '05', title: 'Apply', desc: 'Find D2C brands + build your pitch' },
               ].map((item, idx) => (
                 <div key={item.num} className={`py-4 flex gap-4 ${idx !== 0 ? 'border-t border-border/60' : 'border-t border-border/60'}`}>
-                  <div className="text-[13px] font-bold text-accent pt-0.5">{item.num}</div>
+                  <div className="text-[13px] font-bold text-[#3155F5] pt-0.5">{item.num}</div>
                   <div>
                     <div className="text-[15px] font-semibold text-main mb-0.5">— {item.title}</div>
                     <div className="text-[14px] text-secondary leading-snug">{item.desc}</div>
