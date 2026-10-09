@@ -35,7 +35,8 @@ export default function FitSection() {
             
             {/* Headline */}
             <h2 id="fit-heading" className="font-bold text-[34px] md:text-[clamp(36px,4.3vw,55px)] leading-[1.1] md:leading-[1.08] tracking-[-1.5px] md:tracking-[-2.3px] text-[#111318] mt-[13px] md:mt-[15px]">
-              The dashboard changed.<br className="hidden md:block" />What would you do next?
+              The dashboard changed.<br />
+              <span className="text-[#3155F5]">What would you do next?</span>
             </h2>
           </div>
           
