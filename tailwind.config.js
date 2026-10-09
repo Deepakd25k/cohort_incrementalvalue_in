@@ -6,15 +6,20 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: '#FFFFFF',
+        page: '#FFFFFF',
         main: '#111318',
-        secondary: '#596171',
-        accent: '#3155F5',
-        surface: '#F5F7FB',
-        border: '#E3E7EE',
+        blue: '#3155F5',
+        muted: '#626977',
+        borders: '#DFE3EB',
+        cardBg: '#F5F7FF',
+        cardBorder: '#D6DEFB',
+        cardSep: '#DCE2F4',
+        stickerBg: '#DAFA9C',
+        stickerBorder: '#C5E58C',
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
+        nimbus: ['Nimbus', 'Helvetica', 'Arial', 'sans-serif'],
+        mono: ['ui-monospace', 'SFMono-Regular', 'Consolas', 'monospace'],
       },
     }
   },

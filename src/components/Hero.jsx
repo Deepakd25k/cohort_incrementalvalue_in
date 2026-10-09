@@ -1,148 +1,137 @@
-import React, { useState } from 'react';
-import Dialog from './Dialog';
+import React from 'react';
 
-export default function Hero({ config }) {
-  const [isDialogOpen, setIsDialogOpen] = useState(false);
-
-  const {
-    price = '₹2,999',
-    checkoutUrl = null,
-    onViewCurriculum = () => console.log('Curriculum clicked')
-  } = config || {};
-
-  const handlePrimaryAction = () => {
-    if (checkoutUrl) {
-      window.location.href = checkoutUrl;
-    } else {
-      setIsDialogOpen(true);
-    }
-  };
-
+export default function Hero() {
   return (
-    <main className="w-full flex-grow flex items-center bg-background">
-      <div className="max-w-[1200px] mx-auto w-full px-5 md:px-6 pt-10 pb-12 md:py-16 lg:py-20 flex flex-col lg:flex-row gap-12 lg:gap-16">
+    <main className="w-full bg-page">
+      <div className="page-container hero-grid pt-[65px]">
         
-        {/* Left Column - Copy */}
-        <div className="w-full lg:w-[56%] flex flex-col pt-2 md:pt-4">
+        {/* LEFT COLUMN */}
+        <div className="flex flex-col">
           
           {/* Eyebrow */}
-          <div className="flex items-center gap-2 text-[10px] sm:text-[11px] font-semibold text-secondary tracking-widest uppercase mb-5">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#3155F5]"></span>
+          <div className="font-mono text-[10px] tracking-[1px] leading-[1.6] text-[#677080] flex items-center gap-[8px]">
+            <div className="w-[6px] h-[6px] bg-blue rounded-full shrink-0"></div>
             D2C PERFORMANCE MARKETING · COHORT 03
           </div>
-          
+
           {/* Headline */}
-          <h1 className="text-[46px] sm:text-[56px] lg:text-[64px] font-bold text-main leading-[1.05] tracking-tight mb-6">
+          <h1 className="font-bold text-[clamp(52px,5.65vw,76px)] leading-[1.03] tracking-[-3.9px] mt-[23px] mb-[24px]">
             Run the ads.<br/>
             Understand the<br/>
-            <span className="text-[#3155F5]">whole business.</span>
+            <span className="text-blue font-normal not-italic">whole business.</span>
           </h1>
 
-          {/* Subheading 1 */}
-          <p className="text-[18px] md:text-[20px] text-secondary leading-[1.5] max-w-[540px] mb-4">
+          {/* Supporting Paragraph */}
+          <p className="text-[19px] leading-[1.5] text-[#505A6B] max-w-[555px] mb-[15px]">
             Learn to diagnose D2C growth—from acquisition and tracking to CRO, delivered orders and repeat purchases.
           </p>
-          
-          {/* Subheading 2 */}
-          <p className="text-[15px] text-secondary max-w-[500px] mb-8">
+
+          {/* Audience Line */}
+          <p className="text-[14px] leading-[1.5] text-muted max-w-[430px] mb-[25px]">
             For marketers who know campaign basics and want to own the next decision.
           </p>
 
-          {/* CTA Group */}
-          <div className="flex flex-col items-start gap-5 mb-10 w-full sm:w-auto">
-            <button 
-              onClick={handlePrimaryAction}
-              className="w-full sm:w-auto h-[54px] md:h-[56px] px-8 bg-[#3155F5] hover:bg-[#3155F5]/90 text-white text-[16px] font-medium rounded-[6px] flex items-center justify-center sm:justify-start gap-2.5 transition-colors focus:outline-none"
-            >
-              Join Batch 03 — {price}
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M7 17L17 7" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M7 7H17V17" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
+          {/* CTA Row */}
+          <div className="flex items-center gap-[21px] flex-wrap">
+            <button className="min-h-[56px] px-[23px] py-[17px] bg-blue border border-blue text-white text-[15px] rounded-[6px] font-normal flex items-center hover:bg-[#2443D3] hover:-translate-y-[2px] transition-transform duration-150">
+              Join Batch 03 — ₹2,999
+              <span className="ml-[26px] text-[21px] leading-none">↗</span>
             </button>
+            <button className="text-[13px] text-main border-b border-[#CCD2DF] py-[8px] flex items-center gap-[14px]">
+              See what you’ll learn
+              <span className="leading-none">↓</span>
+            </button>
+          </div>
+
+          {/* Course Facts */}
+          <div className="flex flex-wrap items-baseline gap-[25px] mt-[29px] mb-[18px]">
+            <div className="flex items-baseline pr-[25px] relative">
+              <span className="text-[27px] font-bold tracking-[-0.7px]">4</span>
+              <span className="text-[12px] text-muted ml-[7px]">weekends</span>
+              <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 w-px h-[27px] bg-borders"></div>
+            </div>
             
-            <button 
-              onClick={onViewCurriculum}
-              className="text-[15px] font-medium text-main border-b border-border hover:border-main pb-1 transition-colors flex items-center gap-1.5"
-            >
-              See what you'll learn 
-              <span className="text-[12px]">↓</span>
-            </button>
-          </div>
-
-          {/* Stats Row */}
-          <div className="flex flex-wrap items-center gap-6 md:gap-8 mb-4">
-            <div className="flex items-baseline gap-1.5">
-              <span className="text-[34px] font-bold text-main leading-none tracking-tight">4</span>
-              <span className="text-[13px] text-secondary font-medium">weekends</span>
+            <div className="flex items-baseline pr-[25px] relative">
+              <span className="text-[27px] font-bold tracking-[-0.7px]">8</span>
+              <span className="text-[12px] text-muted ml-[7px]">live sessions</span>
+              <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 w-px h-[27px] bg-borders"></div>
             </div>
-            <div className="w-px h-10 bg-border hidden sm:block"></div>
-            <div className="flex items-baseline gap-1.5">
-              <span className="text-[34px] font-bold text-main leading-none tracking-tight">8</span>
-              <span className="text-[13px] text-secondary font-medium">live sessions</span>
-            </div>
-            <div className="w-px h-10 bg-border hidden sm:block"></div>
-            <div className="flex items-baseline gap-1.5">
-              <span className="text-[34px] font-bold text-main leading-none tracking-tight">24</span>
-              <span className="text-[13px] text-secondary font-medium">live hours</span>
+            
+            <div className="flex items-baseline">
+              <span className="text-[27px] font-bold tracking-[-0.7px]">24</span>
+              <span className="text-[12px] text-muted ml-[7px]">live hours</span>
             </div>
           </div>
 
-          {/* Small Footer Text */}
-          <div className="text-[12px] text-secondary leading-relaxed max-w-[400px]">
-            Saturday + Sunday · 2.5h workshop + 30m discussion<br/>
-            Start date & exact IST timings to be announced.
+          {/* Schedule Note */}
+          <div className="text-[11px] leading-[1.7] mb-[27px]">
+            <div className="text-[#687182]">Saturday + Sunday · 2.5h workshop + 30m discussion</div>
+            <div className="text-[#7E8796]">Start date & exact IST timings to be announced.</div>
           </div>
         </div>
 
-        {/* Right Column - Learning Map */}
-        <div className="w-full lg:w-[44%] mt-6 lg:mt-0 lg:pt-4">
-          <div className="bg-surface border border-border rounded-[16px] p-6 md:p-[32px]">
-            <div className="text-[11px] font-bold text-secondary tracking-widest uppercase mb-3">
-              WHAT YOU’LL CONNECT
-            </div>
-            <h2 className="text-[28px] md:text-[32px] font-bold text-main leading-tight tracking-tight mb-6">
-              From first click<br/>
-              to delivered order.
-            </h2>
-            
-            <div className="flex flex-col">
-              {[
-                { num: '01', title: 'Acquire', desc: 'Creative strategy + Meta & Google ads' },
-                { num: '02', title: 'Measure', desc: 'Tracking + attribution + business metrics' },
-                { num: '03', title: 'Convert', desc: 'CRO + landing pages + checkout' },
-                { num: '04', title: 'Deliver', desc: 'Payments + RTO + delivered revenue' },
-                { num: '05', title: 'Apply', desc: 'Find D2C brands + build your pitch' },
-              ].map((item, idx) => (
-                <div key={item.num} className={`py-4 flex gap-4 ${idx !== 0 ? 'border-t border-border/60' : 'border-t border-border/60'}`}>
-                  <div className="text-[13px] font-bold text-[#3155F5] pt-0.5">{item.num}</div>
-                  <div>
-                    <div className="text-[15px] font-semibold text-main mb-0.5">— {item.title}</div>
-                    <div className="text-[14px] text-secondary leading-snug">{item.desc}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
+        {/* RIGHT COLUMN - FIELDNOTES CARD */}
+        <div className="relative self-start mt-[8px] mb-[42px] p-[28px] pb-[22px] bg-cardBg border border-cardBorder rounded-[8px]">
+          
+          {/* Top Row */}
+          <div className="flex justify-between items-center">
+            <div className="font-mono text-[9px] text-[#707EAA] tracking-[1px]">THE D2C OPERATOR’S</div>
+            <div className="text-[54px] font-bold text-blue tracking-[-3px] leading-[1]">03</div>
+          </div>
 
-            <div className="mt-2 pt-5 border-t border-border">
-              <div className="text-[15px] font-semibold text-main mb-1">
-                AI + n8n, applied to the workflow.
+          {/* Card Headline */}
+          <h2 className="text-[35px] font-bold leading-[1.08] tracking-[-1.3px] mt-[11px] mb-[27px]">
+            Fieldnotes<br/>for the real work.
+          </h2>
+
+          {/* Learning Rows */}
+          <div className="flex flex-col">
+            {[
+              { num: '01', title: 'Acquire', desc: 'Audience · Offer · Creative' },
+              { num: '02', title: 'Measure', desc: 'Tracking · Attribution · Economics' },
+              { num: '03', title: 'Convert', desc: 'Product page · Checkout · CRO' },
+              { num: '04', title: 'Deliver', desc: 'Order quality · COD · RTO' },
+              { num: '05', title: 'Retain', desc: 'Repeat purchase · WhatsApp' },
+            ].map((item, idx) => (
+              <div key={item.num} className="grid grid-cols-[24px_1fr] gap-x-[11px] gap-y-[3px] py-[15px] border-t border-cardSep">
+                <div className="font-mono text-[10px] text-[#8B99C3] pt-[3px] row-span-2">{item.num}</div>
+                <div className="text-[18px] font-normal leading-none">{item.title}</div>
+                <div className="text-[11px] text-[#798298]">{item.desc}</div>
               </div>
-              <div className="text-[13px] text-secondary">
-                Practical research, reporting and automation use cases.
-              </div>
+            ))}
+          </div>
+
+          {/* Card Footer */}
+          <div className="flex justify-between items-center border-t border-cardSep pt-[19px] mt-[3px]">
+            <div className="font-mono text-[8px] tracking-[0.4px] text-blue">WITH AI + n8n IN THE WORKFLOW</div>
+            <div className="text-[24px] text-blue leading-none">↗</div>
+          </div>
+
+          {/* Green Sticker */}
+          <div className="absolute -right-[22px] -bottom-[35px] flex items-center gap-[12px] px-[24px] py-[15px] bg-stickerBg border border-stickerBorder rounded-[3px] -rotate-4 shadow-[0_6px_14px_rgba(36,54,28,0.03)] text-[12px] leading-[1.5] z-10">
+            <div className="w-[7px] h-[7px] rounded-full shrink-0 bg-[#517925]"></div>
+            <div>
+              <span className="font-normal">Learn it live. </span>
+              <span className="font-bold">Ask why. Then apply it.</span>
             </div>
           </div>
+
+        </div>
+
+        {/* BOTTOM SUBJECT STRIP */}
+        <div className="lg:col-span-2 flex flex-wrap justify-between items-center gap-[15px] py-[20px] mt-[31px] border-y border-borders font-mono text-[9px] tracking-[1px] text-[#707A8B]">
+          <span>CAMPAIGNS</span>
+          <span className="text-blue text-[16px] font-normal leading-none">+</span>
+          <span>CRO</span>
+          <span className="text-blue text-[16px] font-normal leading-none">+</span>
+          <span>MEASUREMENT</span>
+          <span className="text-blue text-[16px] font-normal leading-none">+</span>
+          <span>AI & n8n</span>
+          <span className="text-blue text-[16px] font-normal leading-none">+</span>
+          <span>BRAND OUTREACH</span>
         </div>
 
       </div>
-
-      <Dialog 
-        isOpen={isDialogOpen}
-        onClose={() => setIsDialogOpen(false)}
-        title="Cohort 03 enrolment"
-        body="The fee is ₹2,999. Batch dates and registration details will be announced here."
-      />
     </main>
   );
 }
