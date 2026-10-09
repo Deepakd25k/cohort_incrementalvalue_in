@@ -37,10 +37,10 @@ export default function Hero() {
               Join Batch 03 — ₹2,999
               <span className="ml-[26px] text-[21px] leading-none">↗</span>
             </button>
-            <button className="text-[13px] text-main border-b border-[#CCD2DF] py-[8px] flex items-center gap-[14px]">
+            <a href="#curriculum" className="text-[13px] text-main border-b border-[#CCD2DF] pb-[8px] flex items-center gap-[14px]">
               See what you’ll learn
               <span className="leading-none">↓</span>
-            </button>
+            </a>
           </div>
 
           {/* Course Facts */}

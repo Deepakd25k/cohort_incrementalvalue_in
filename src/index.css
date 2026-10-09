@@ -51,3 +51,15 @@ body {
     column-gap: 62px;
   }
 }
+
+/* Custom Curriculum Details Styling */
+details > summary {
+  list-style: none;
+  cursor: pointer;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
+details[open] summary .expand-icon {
+  transform: rotate(45deg);
+}
