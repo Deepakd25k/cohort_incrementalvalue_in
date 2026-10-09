@@ -15,7 +15,7 @@ export default function Hero() {
           </div>
 
           {/* Headline */}
-          <h1 className="font-bold text-[clamp(52px,5.65vw,76px)] leading-[1.03] tracking-[-3.9px] mt-[23px] mb-[24px]">
+          <h1 className="font-bold text-[44px] md:text-[clamp(52px,5.65vw,76px)] leading-[1.03] tracking-[-3px] md:tracking-[-3.9px] mt-[23px] mb-[24px]">
             Run the ads.<br/>
             Understand the<br/>
             <span className="text-blue font-normal not-italic">whole business.</span>
@@ -44,22 +44,22 @@ export default function Hero() {
           </div>
 
           {/* Course Facts */}
-          <div className="flex flex-wrap items-baseline gap-[25px] mt-[29px] mb-[18px]">
-            <div className="flex items-baseline pr-[25px] relative">
-              <span className="text-[27px] font-bold tracking-[-0.7px]">4</span>
-              <span className="text-[12px] text-muted ml-[7px]">weekends</span>
-              <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 w-px h-[27px] bg-borders"></div>
+          <div className="flex flex-row items-baseline gap-[14px] sm:gap-[25px] mt-[29px] mb-[18px]">
+            <div className="flex items-baseline pr-[14px] sm:pr-[25px] relative">
+              <span className="text-[22px] sm:text-[27px] font-bold tracking-[-0.7px]">4</span>
+              <span className="text-[11px] sm:text-[12px] text-muted ml-[5px] sm:ml-[7px]">weekends</span>
+              <div className="absolute right-0 top-1/2 -translate-y-1/2 w-px h-[20px] sm:h-[27px] bg-borders"></div>
             </div>
             
-            <div className="flex items-baseline pr-[25px] relative">
-              <span className="text-[27px] font-bold tracking-[-0.7px]">8</span>
-              <span className="text-[12px] text-muted ml-[7px]">live sessions</span>
-              <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 w-px h-[27px] bg-borders"></div>
+            <div className="flex items-baseline pr-[14px] sm:pr-[25px] relative">
+              <span className="text-[22px] sm:text-[27px] font-bold tracking-[-0.7px]">8</span>
+              <span className="text-[11px] sm:text-[12px] text-muted ml-[5px] sm:ml-[7px]">live sessions</span>
+              <div className="absolute right-0 top-1/2 -translate-y-1/2 w-px h-[20px] sm:h-[27px] bg-borders"></div>
             </div>
             
             <div className="flex items-baseline">
-              <span className="text-[27px] font-bold tracking-[-0.7px]">24</span>
-              <span className="text-[12px] text-muted ml-[7px]">live hours</span>
+              <span className="text-[22px] sm:text-[27px] font-bold tracking-[-0.7px]">24</span>
+              <span className="text-[11px] sm:text-[12px] text-muted ml-[5px] sm:ml-[7px]">live hours</span>
             </div>
           </div>
 
