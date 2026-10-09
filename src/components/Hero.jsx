@@ -44,22 +44,22 @@ export default function Hero() {
           </div>
 
           {/* Course Facts */}
-          <div className="flex flex-row items-baseline gap-[14px] sm:gap-[25px] mt-[29px] mb-[18px]">
-            <div className="flex items-baseline pr-[14px] sm:pr-[25px] relative">
+          <div className="flex flex-row justify-between lg:justify-start items-baseline mt-[29px] mb-[18px] w-full lg:w-auto">
+            <div className="flex items-baseline">
               <span className="text-[22px] sm:text-[27px] font-bold tracking-[-0.7px]">4</span>
-              <span className="text-[11px] sm:text-[12px] text-muted ml-[5px] sm:ml-[7px]">weekends</span>
-              <div className="absolute right-0 top-1/2 -translate-y-1/2 w-px h-[20px] sm:h-[27px] bg-borders"></div>
+              <span className="text-[11px] sm:text-[12px] text-muted ml-[4px] sm:ml-[7px]">weekends</span>
             </div>
+            <div className="w-px h-[20px] sm:h-[27px] bg-borders mx-[10px] lg:mx-[25px]"></div>
             
-            <div className="flex items-baseline pr-[14px] sm:pr-[25px] relative">
+            <div className="flex items-baseline">
               <span className="text-[22px] sm:text-[27px] font-bold tracking-[-0.7px]">8</span>
-              <span className="text-[11px] sm:text-[12px] text-muted ml-[5px] sm:ml-[7px]">live sessions</span>
-              <div className="absolute right-0 top-1/2 -translate-y-1/2 w-px h-[20px] sm:h-[27px] bg-borders"></div>
+              <span className="text-[11px] sm:text-[12px] text-muted ml-[4px] sm:ml-[7px]">live sessions</span>
             </div>
+            <div className="w-px h-[20px] sm:h-[27px] bg-borders mx-[10px] lg:mx-[25px]"></div>
             
             <div className="flex items-baseline">
               <span className="text-[22px] sm:text-[27px] font-bold tracking-[-0.7px]">24</span>
-              <span className="text-[11px] sm:text-[12px] text-muted ml-[5px] sm:ml-[7px]">live hours</span>
+              <span className="text-[11px] sm:text-[12px] text-muted ml-[4px] sm:ml-[7px]">live hours</span>
             </div>
           </div>
 
@@ -71,7 +71,7 @@ export default function Hero() {
         </div>
 
         {/* RIGHT COLUMN - FIELDNOTES CARD */}
-        <div className="relative self-start mt-[8px] mb-[42px] p-[28px] pb-[22px] bg-cardBg border border-cardBorder rounded-[8px]">
+        <div className="relative w-full lg:w-auto lg:self-start mt-[8px] mb-[42px] p-[24px] lg:p-[28px] pb-[22px] bg-cardBg border border-cardBorder rounded-[8px]">
           
           {/* Top Row */}
           <div className="flex justify-between items-center">
@@ -108,7 +108,7 @@ export default function Hero() {
           </div>
 
           {/* Green Sticker */}
-          <div className="absolute -right-[22px] -bottom-[35px] flex items-center gap-[12px] px-[24px] py-[15px] bg-stickerBg border border-stickerBorder rounded-[3px] -rotate-4 shadow-[0_6px_14px_rgba(36,54,28,0.03)] text-[12px] leading-[1.5] z-10">
+          <div className="absolute -right-[10px] md:-right-[22px] -bottom-[35px] flex items-center gap-[12px] px-[24px] py-[15px] bg-stickerBg border border-stickerBorder rounded-[3px] -rotate-4 shadow-[0_6px_14px_rgba(36,54,28,0.03)] text-[12px] leading-[1.5] z-10">
             <div className="w-[7px] h-[7px] rounded-full shrink-0 bg-[#517925]"></div>
             <div>
               <span className="font-normal">Learn it live. </span>
