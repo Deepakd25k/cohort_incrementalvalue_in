@@ -1,4 +1,5 @@
 import React from 'react';
+import { openEnrolment } from '../utils/events';
 
 export default function Navbar() {
   return (
@@ -21,7 +22,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-[27px]">
           <a href="#curriculum" className="text-[13px] text-muted hover:text-main transition-colors">Curriculum</a>
           <button className="text-[13px] text-muted hover:text-main transition-colors">Your instructor</button>
-          <button className="bg-blue border border-blue text-white text-[13px] rounded-[6px] min-h-[43px] px-[16px] py-[10px] flex items-center hover:bg-[#2443D3] transition-colors">
+          <button onClick={openEnrolment} className="bg-blue border border-blue text-white text-[13px] rounded-[6px] min-h-[43px] px-[16px] py-[10px] flex items-center hover:bg-[#2443D3] transition-colors">
             <span>Join Batch 03</span>
             <span className="ml-[21px]">↗</span>
           </button>

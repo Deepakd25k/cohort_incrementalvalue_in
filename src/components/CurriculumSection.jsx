@@ -1,4 +1,5 @@
 import React from 'react';
+import { openEnrolment } from '../utils/events';
 
 export default function CurriculumSection() {
   const weeks = [
@@ -85,7 +86,7 @@ export default function CurriculumSection() {
   ];
 
   const handleJoinClick = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' }); // Mock scroll to top hero / enrolment flow
+    openEnrolment();
   };
 
   return (

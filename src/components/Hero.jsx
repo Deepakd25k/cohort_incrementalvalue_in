@@ -1,4 +1,5 @@
 import React from 'react';
+import { openEnrolment } from '../utils/events';
 
 export default function Hero() {
   return (
@@ -33,7 +34,7 @@ export default function Hero() {
 
           {/* CTA Row */}
           <div className="flex items-center gap-[21px] flex-wrap">
-            <button className="min-h-[56px] px-[23px] py-[17px] bg-blue border border-blue text-white text-[15px] rounded-[6px] font-normal flex items-center hover:bg-[#2443D3] hover:-translate-y-[2px] transition-transform duration-150">
+            <button onClick={openEnrolment} className="min-h-[56px] px-[23px] py-[17px] bg-blue border border-blue text-white text-[15px] rounded-[6px] font-normal flex items-center hover:bg-[#2443D3] hover:-translate-y-[2px] transition-transform duration-150">
               Join Batch 03 — ₹2,999
               <span className="ml-[26px] text-[21px] leading-none">↗</span>
             </button>
